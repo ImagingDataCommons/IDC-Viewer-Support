@@ -1,2 +1,2 @@
 # IDC-Viewer-Support
-Resources to support OHIF Deployment
+Resources to support OHIF Viewer Deployment
