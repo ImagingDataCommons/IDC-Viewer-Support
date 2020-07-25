@@ -14,6 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+
+cd ~/IDC-Viewer-Support/scripts
+
 if [ "$#" -ne 1 ]; then
     echo "Usage: ./fresh_viewer_from_git.sh [latest | release]"
     exit 1
