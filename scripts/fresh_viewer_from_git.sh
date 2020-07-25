@@ -45,8 +45,8 @@ pushd ~/Viewers > /dev/null
 git fetch --all --tags
 git pull
 if [ ${1} == "release" ]; then
-  git checkout tags/${COMMIT}
-  echo "tags/${COMMIT}" >> ~/scratch/idcGitVersion.txt
+  git checkout tags/${RELEASE_TAG}
+  echo "tags/${RELEASE_TAG}" >> ~/scratch/idcGitVersion.txt
 elif [ "${1}" == "latest" ]; then
   git checkout master
   git log -n1 --format=format:"%H" >> ~/scratch/idcGitVersion.txt
