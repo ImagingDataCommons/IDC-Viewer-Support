@@ -14,7 +14,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 source ~/setEnvVars.sh
 
 mkdir -p ~/config
@@ -24,10 +23,6 @@ chmod u+x setViewerVars.sh
 source ./setViewerVars.sh
 popd > /dev/null
 
-QUOTA_PAGE=https://storage.googleapis.com/idc-sandbox-002-static/quota_exceeded.html
-STORE_ROOT=https://dev-viewer.canceridc.dev/projects/idc-dev-etl/locations/us/datasets/idc_tcia_mvp_wave0/dicomStores/idc_tcia/study/
-WBUCKET=testing-viewer.canceridc.dev
-VERSION_FOLDER=latest
 CACHE_SETTING="Cache-Control:no-cache, max-age=0"
 
 cp ../static_files/app-config.js ~/scratch/app-config-template.js
