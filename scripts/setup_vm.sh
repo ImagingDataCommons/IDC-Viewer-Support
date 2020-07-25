@@ -49,3 +49,4 @@ yarn run build
 mkdir ~/scratch
 
 echo "Be sure to now customize the ~/setEnvVars.sh file to your system!"
+echo "THIS VM NEEDS FULL STORAGE SCOPES TO SET STORAGE METADATA!"

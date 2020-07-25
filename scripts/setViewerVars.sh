@@ -18,4 +18,3 @@
 QUOTA_PAGE=https://pageserver.example.com/quota_exceeded.html
 STORE_ROOT=https://ohifviewer.example.com/path/to/study/
 WBUCKET=destination-bucket
-VERSION_FOLDER=destination-folder

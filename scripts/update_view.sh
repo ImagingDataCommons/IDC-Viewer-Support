@@ -8,7 +8,7 @@
 
 yarn install
 yarn run build
-cd ./platform/viewers/dist/
+cd ./platform/viewer/dist/
 
 cp $STATIC_DIR/app-config.js .
 cp $STATIC_DIR/idc-black.svg .
