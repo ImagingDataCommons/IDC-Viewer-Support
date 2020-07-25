@@ -1,4 +1,4 @@
-# Perliminaries
+# Preliminaries
 # clone or download https://github.com/OHIF/Viewers.git
 # cd to your location of the OHIF repo 
 # install yarn

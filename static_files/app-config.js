@@ -16,8 +16,7 @@ window.config = function(props) {
           window.location =  'https://storage.googleapis.com/idc-sandbox-002-static/quota_exceeded.html';
       }
     },
-    //healthcareApiEndpoint: 'https://console.cloud.google.com/healthcare/browser/locations/us/datasets/pre-mvp-temp/datastores?project=idc-dev-etl',
-     healthcareApiEndpoint: 'https://proxy-dot-idc-dev.appspot.com/v1beta1',
+    healthcareApiEndpoint: '____IDC____HEALTHCARE____ENDPOINT____',
 
     hotkeys: [
       // ~ Global
