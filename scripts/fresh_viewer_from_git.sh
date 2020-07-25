@@ -36,15 +36,19 @@ chmod u+x ${USE_SET}
 source ./${USE_SET}
 popd > /dev/null
 
+date > ~/scratch/idcGitVersion.txt
 # Refresh from git. Head into the Viewer repo
 pushd ~/Viewers > /dev/null
 git fetch --all --tags
 git pull
 if [ ${1} == "release" ]; then
-  git checkout ${COMMIT}
+  git checkout tags/${COMMIT}
+  echo "tags/${COMMIT}" >> ~/scratch/idcGitVersion.txt
 elif [ "${1}" == "latest" ]; then
   git checkout master
+  git log -n1 --format=format:"%H" >> ~/scratch/idcGitVersion.txt
 fi
+
 
 # Run yarn:
 
@@ -71,6 +75,7 @@ pushd ~/IDC-Viewer-Support/static_files > /dev/null
 cp idc-black.svg ~/Viewers/platform/viewer/dist/idc-black.svg
 cp idc-dark.svg ~/Viewers/platform/viewer/dist/idc-dark.svg
 cp ~/scratch/app-config.js ~/Viewers/platform/viewer/dist/app-config.js
+cp ~/scratch/idcGitVersion.txt ~/Viewers/platform/viewer/dist/idcGitVersion.txt
 popd > /dev/null
 
 #
@@ -91,4 +96,3 @@ if [ ${1} == "release" ]; then
   git checkout master
   popd > /dev/null
 fi
-
