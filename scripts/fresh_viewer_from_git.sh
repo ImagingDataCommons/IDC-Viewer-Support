@@ -67,18 +67,20 @@ fi
 # Move in customization
 #
 
-cd ~/IDC-Viewer-Support/static_files
-
+pushd ~/IDC-Viewer-Support/static_files > /dev/null
 cp idc-black.svg ~/Viewers/platform/viewer/dist/idc-black.svg
 cp idc-dark.svg ~/Viewers/platform/viewer/dist/idc-dark.svg
 cp ~/scratch/app-config.js ~/Viewers/platform/viewer/dist/app-config.js
+popd > /dev/null
 
 #
 # Install in server buckets
 #
 
+pushd ~/Viewers/platform/viewer/dist/ > /dev/null
 gsutil web set -m index.html -e index.html gs://${WBUCKET}
 gsutil -h "Cache-Control:no-cache, max-age=0" rsync -d -r . gs://${WBUCKET}
+popd > /dev/null
 
 #
 # Get back to tip
