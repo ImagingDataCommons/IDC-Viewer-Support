@@ -20,7 +20,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 ./prepare_config.sh ${1}
-if [ $? ne 0 ]; then
+if [ $? -ne 0 ]; then
   exit 1
 fi
 
