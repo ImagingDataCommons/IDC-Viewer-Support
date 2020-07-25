@@ -25,7 +25,7 @@ popd > /dev/null
 
 CACHE_SETTING="Cache-Control:no-cache, max-age=0"
 
-cp ../static_files/app-config.js ~/scratch/app-config-template.js
+cp ../static_files/app-config-template.js ~/scratch/app-config-template.js
 cat ~/scratch/app-config-template.js | sed "s#_X___IDC__Z__ROOT___Y_#${STORE_ROOT}#" | sed "s#_X___IDC__Z__QUOTA___Y_#${QUOTA_PAGE}#" >  ~/scratch/app-config.js
 
 gsutil cp ~/scratch/app-config.js gs://${WBUCKET}/${VERSION_FOLDER}/app-config.js
