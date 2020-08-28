@@ -3,7 +3,7 @@ window.config = {
   routerBasename: '/',
   whiteLabelling: {},
   extensions: [],
-  showStudyList: true,
+  showStudyList: false,
   filterQueryParam: true,
   httpErrorHandler: error => {
     // This is 429 when rejected from the public idc sandbox too often.
