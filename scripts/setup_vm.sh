@@ -40,7 +40,7 @@ sudo apt-get install -y yarn
 # Get the Viewers and the Viewer Support repos in:
 #
 
-git clone https://github.com/OHIF/Viewers.git
+git clone https://github.com/ImagingDataCommons/Viewers.git
 git clone https://github.com/ImagingDataCommons/IDC-Viewer-Support.git
 
 cd ~/IDC-Viewer-Support/scripts
