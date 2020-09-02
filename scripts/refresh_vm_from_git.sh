@@ -34,7 +34,9 @@ sudo apt-get install yarn
 # Get the Viewers and the Viewer Support repos in:
 #
 
+rm -rf ~/Viewers
 git clone https://github.com/ImagingDataCommons/Viewers.git
+rm -rf ~/IDC-Viewer-Support
 git clone https://github.com/ImagingDataCommons/IDC-Viewer-Support.git
 
 cd ~/Viewers
