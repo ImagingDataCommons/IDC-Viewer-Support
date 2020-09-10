@@ -3,6 +3,7 @@ window.config = {
   routerBasename: '/',
   whiteLabelling: {},
   extensions: [],
+  splitQueryParameterCalls: true,
   showStudyList: false,
   filterQueryParam: true,
   httpErrorHandler: error => {
