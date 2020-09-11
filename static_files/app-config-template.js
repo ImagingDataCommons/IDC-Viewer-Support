@@ -139,7 +139,7 @@ window.config = {
         style: {
           display: 'block',
           textIndent: '-9999px',
-          background: 'url(/idc-black.svg)',
+          background: 'url(/IDC-Logo-WHITE.svg)',
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           width: '200px',
