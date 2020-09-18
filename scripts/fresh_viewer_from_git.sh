@@ -75,8 +75,9 @@ fi
 #
 
 pushd ~/IDC-Viewer-Support/static_files > /dev/null
-cp idc-black.svg ~/Viewers/platform/viewer/dist/idc-black.svg
-cp idc-dark.svg ~/Viewers/platform/viewer/dist/idc-dark.svg
+cp IDC-Logo-WHITE.svg ~/Viewers/platform/viewer/dist/IDC-Logo-WHITE.svg
+#cp idc-black.svg ~/Viewers/platform/viewer/dist/idc-black.svg
+#cp idc-dark.svg ~/Viewers/platform/viewer/dist/idc-dark.svg
 cp ~/scratch/app-config.js ~/Viewers/platform/viewer/dist/app-config.js
 cp ~/scratch/idcGitVersion.txt ~/Viewers/platform/viewer/dist/idcGitVersion.txt
 popd > /dev/null

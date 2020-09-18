@@ -18,6 +18,8 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 sudo apt-get install -y	git
+sudo apt-get install -y make # needed by yarn install...
+sudo apt-get install -y g++ # needed by yarn install...
 
 #
 # Following instructions at https://classic.yarnpkg.com/ and
