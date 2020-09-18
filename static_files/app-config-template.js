@@ -3,6 +3,7 @@ window.config = {
   routerBasename: '/',
   whiteLabelling: {},
   extensions: [],
+  disableMeasurementPanel: true,
   splitQueryParameterCalls: true,
   showStudyList: false,
   filterQueryParam: true,
