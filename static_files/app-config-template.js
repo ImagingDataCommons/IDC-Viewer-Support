@@ -1,7 +1,6 @@
 window.config = {
   // default: '/'
   routerBasename: '/',
-  whiteLabelling: {},
   extensions: [],
   disableMeasurementPanel: true,
   splitQueryParameterCalls: true,
