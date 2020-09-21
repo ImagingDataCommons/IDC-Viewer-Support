@@ -144,6 +144,7 @@ window.config = {
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           width: '200px',
+          height: '45px',
         },
       });
     },
