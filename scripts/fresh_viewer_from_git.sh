@@ -51,14 +51,39 @@ elif [ "${1}" == "latest" ]; then
   git checkout master
   git log -n1 --format=format:"%H" >> ~/scratch/idcGitVersion.txt
 fi
+popd > /dev/null
 
+#
+# Move in favicon customization
+#
+
+pushd ~/Viewers/platform/viewer/public/assets/ > /dev/null
+mv favicon.ico ~/scratch/favicon.ico
+mv favicon-16x16.png ~/scratch/favicon-16x16.png
+mv favicon-32x32.png ~/scratch/favicon-32x32.png
+popd > /dev/null
+
+pushd ~/IDC-Viewer-Support/static_files > /dev/null
+cp favicon-nci.ico ~/Viewers/platform/viewer/public/assets/favicon.ico
+cp favicon-nci-16x16.png ~/Viewers/platform/viewer/public/assets/favicon-16x16.png
+cp favicon-nci-32x32.png ~/Viewers/platform/viewer/public/assets/favicon-32x32.png
+popd > /dev/null
 
 # Run yarn:
 
+pushd ~/Viewers > /dev/null
 yarn install
 yarn run build
+popd > /dev/null
 
-# Back to current directory
+#
+# Get the originals back in place to make git checkout happy
+#
+
+pushd ~/Viewers/platform/viewer/public/assets/ > /dev/null
+mv ~/scratch/favicon.ico favicon.ico
+mv ~/scratch/favicon-16x16.png favicon-16x16.png
+mv ~/scratch/favicon-32x32.png favicon-32x32.png
 popd > /dev/null
 
 #
@@ -76,14 +101,10 @@ fi
 
 pushd ~/IDC-Viewer-Support/static_files > /dev/null
 cp IDC-Logo-WHITE.svg ~/Viewers/platform/viewer/dist/IDC-Logo-WHITE.svg
-cp favicon.ico ~/Viewers/platform/viewer/public/assets/favicon.ico
-cp favicon-16x16.png ~/Viewers/platform/viewer/public/assets/favicon-16x16.png
-cp favicon-32x32.png ~/Viewers/platform/viewer/public/assets/favicon-32x32.png
 popd > /dev/null
 
 cp ~/scratch/app-config.js ~/Viewers/platform/viewer/dist/app-config.js
 cp ~/scratch/idcGitVersion.txt ~/Viewers/platform/viewer/dist/idcGitVersion.txt
-
 
 #
 # Install in server buckets
