@@ -136,7 +136,7 @@ window.config = {
         target: '_self',
         rel: 'noopener noreferrer',
         className: 'header-brand',
-        href: '/',
+        href: 'https://imagingdatacommons.github.io/',
         style: {
           display: 'block',
           textIndent: '-9999px',
