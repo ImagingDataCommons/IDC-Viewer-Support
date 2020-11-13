@@ -14,20 +14,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-if [ "$#" -ne 1 ]; then
-    echo "Usage: ./prepare_config.sh [latest | release | config]"
+
+cd ~/IDC-Viewer-Support/scripts
+
+if [ "$#" -ne 0 ]; then
+    echo "Usage: ./fresh_app_config.sh"
     exit 1
 fi
 
-if [ ${1} == "release" ]; then
-  USE_SET=setViewerVarsRelease.sh
-elif [ "${1}" == "latest" ]; then
-  USE_SET=setViewerVarsLatest.sh
-elif [ "${1}" == "config" ]; then
-  USE_SET=setViewerVarsConfig.sh
-else
-  exit 1
-fi
+USE_SET=setViewerVarsConfig.sh
 
 source ~/setEnvVars.sh
 
@@ -38,8 +33,22 @@ chmod u+x ${USE_SET}
 source ./${USE_SET}
 popd > /dev/null
 
-cp ../static_files/app-config-template.js ~/scratch/app-config-template.js
-cat ~/scratch/app-config-template.js | sed "s#_X___IDC__Z__ROOT___Y_#${STORE_ROOT}#" | sed "s#_X___IDC__Z__QUOTA___Y_#${QUOTA_PAGE}#" >  ~/scratch/app-config.js
+#
+# Get config built
+#
 
+./prepare_config.sh config
+if [ $? -ne 0 ]; then
+  exit 1
+fi
 
+#
+# Install in server bucket:
+#
+
+pushd ~/scratch > /dev/null
+gsutil cp app-config.js gs://${WBUCKET}
+CACHE_SETTING="Cache-Control:no-cache, max-age=0"
+gsutil setmeta -h "${CACHE_SETTING}" gs://${WBUCKET}/app-config.js
+popd > /dev/null
 
