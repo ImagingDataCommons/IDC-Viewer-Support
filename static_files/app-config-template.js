@@ -135,7 +135,7 @@ window.config = {
         target: '_self',
         rel: 'noopener noreferrer',
         className: 'header-brand',
-        href: 'https://imagingdatacommons.github.io/',
+        href: 'https://portal.imaging.datacommons.cancer.gov/',
         style: {
           display: 'block',
           textIndent: '-9999px',
